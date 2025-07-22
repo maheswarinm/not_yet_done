@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mahii's Birthday Surprise 🎉</title>
+  <meta charset="UTF-8">
+  <title>Hkkk's Birthday Surprise 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Kaushan+Script&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -35,15 +35,6 @@
       display: none;
       color: #28a745;
     }
-    canvas#fireworksCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 10;
-    }
     #controls {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -61,13 +52,23 @@
       cursor: pointer;
       font-family: 'Press Start 2P', cursive;
     }
+    #fireworksCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+      display: none;
+    }
   </style>
 </head>
 <body>
   <h1>🎂 Countdown to Kiddo's Birthday 🎂</h1>
   <div id="countdown">Loading countdown...</div>
 
-  <h2>🎮 Mahii's Maze</h2>
+  <h2>🎮 Hkkk's Maze</h2>
   <canvas id="mazeCanvas" width="300" height="300"></canvas>
   <div id="message">🎉 HAPPY BIRTHDAY TECH-WARRIOR 💙</div>
 
@@ -79,10 +80,10 @@
   </div>
 
   <canvas id="fireworksCanvas"></canvas>
+  <audio id="bg-music" src="https://dl.dropboxusercontent.com/scl/fi/6iop0kg6gwwab6cb10s5p/Yeh-Ishq-Hai-Jab-We-Met.mp3?rlkey=fnz0r25v25pu0z44orq8oh03v&dl=0" type="audio/mpeg"></audio>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Countdown
       const countdownEl = document.getElementById("countdown");
       const targetDate = new Date("2025-07-23T00:00:00").getTime();
       const fireworksCanvas = document.getElementById("fireworksCanvas");

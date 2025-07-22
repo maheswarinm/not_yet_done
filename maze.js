@@ -26,9 +26,9 @@ function drawMaze() {
       ctx.strokeRect(x * tileSize, y * tileSize, tileSize, tileSize);
     }
   }
-  ctx.fillStyle = "#fdd835"; // goal
+  ctx.fillStyle = "#fdd835";
   ctx.fillRect(goal.x * tileSize, goal.y * tileSize, tileSize, tileSize);
-  ctx.fillStyle = "#ff4dcf"; // player
+  ctx.fillStyle = "#ff4dcf";
   ctx.beginPath();
   ctx.arc(player.x * tileSize + tileSize / 2, player.y * tileSize + tileSize / 2, tileSize / 3, 0, 2 * Math.PI);
   ctx.fill();
@@ -43,6 +43,14 @@ function movePlayer(dx, dy) {
     drawMaze();
     if (player.x === goal.x && player.y === goal.y) {
       document.getElementById("message").style.display = "block";
+      document.getElementById("fireworksCanvas").style.display = "block";
+      document.getElementById("bg-music").play();
+      const script = document.createElement("script");
+      script.src = "fireworks.js";
+      document.body.appendChild(script);
+      setTimeout(() => {
+        window.location.href = "surprise.html";
+      }, 5000);
     }
   }
 }
